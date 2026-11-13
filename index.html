@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <!-- This line makes the page fit phone screens properly -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Daily Quote</title>
+
+  <!-- A calm, friendly font from Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Poppins:wght@400;500&display=swap" rel="stylesheet" />
+
+  <!-- Connect the CSS file -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="container">
+    <!-- Title -->
+    <h1>Daily Quote</h1>
+
+    <!-- Short introduction -->
+    <p class="intro">
+      A little dose of encouragement whenever you need it. Take a breath, read a line, and keep going.
+    </p>
+
+    <!-- The quote and its author. JavaScript will change the text inside these two. -->
+    <figure class="quote-box" aria-live="polite">
+      <blockquote id="quote-text">Believe you can and you're halfway there.</blockquote>
+      <figcaption id="quote-author">Theodore Roosevelt</figcaption>
+    </figure>
+
+    <!-- The button -->
+    <button id="new-quote-btn" type="button">New Quote</button>
+  </main>
+
+  <!-- Connect the JavaScript file (at the end so the page loads first) -->
+  <script src="script.js"></script>
+</body>
+</html>

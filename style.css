@@ -1,0 +1,118 @@
+/* ---------- Colors in one place, so they're easy to change ---------- */
+:root {
+  --bg-1: #fde8ef;      /* soft pink */
+  --bg-2: #e6f0fd;      /* soft blue */
+  --card: #ffffffcc;    /* white, slightly see-through */
+  --text: #2f2a4a;      /* dark purple-navy for easy reading */
+  --accent: #b9a7ee;    /* pastel lavender for the button */
+  --accent-dark: #9b87dd;
+}
+
+/* Makes sizes behave predictably */
+* {
+  box-sizing: border-box;
+}
+
+/* ---------- Page background and centering ---------- */
+body {
+  margin: 0;
+  min-height: 100vh;               /* at least the full screen height */
+  display: flex;                   /* flexbox lets us center things easily */
+  justify-content: center;         /* center horizontally */
+  align-items: center;             /* center vertically */
+  padding: 24px;
+  background: linear-gradient(135deg, var(--bg-1), var(--bg-2));
+  color: var(--text);
+  font-family: "Poppins", sans-serif;
+  text-align: center;
+}
+
+.container {
+  width: 100%;
+  max-width: 640px;                /* keeps text from getting too wide on computers */
+}
+
+/* ---------- Title and intro ---------- */
+h1 {
+  font-family: "Lora", serif;
+  font-size: 2.6rem;
+  font-weight: 600;
+  margin: 0 0 12px;
+}
+
+.intro {
+  margin: 0 auto 32px;
+  max-width: 460px;
+  line-height: 1.6;
+  opacity: 0.85;
+}
+
+/* ---------- Quote card ---------- */
+.quote-box {
+  margin: 0 0 32px;
+  padding: 36px 28px;
+  background: var(--card);
+  border-radius: 20px;
+  box-shadow: 0 8px 30px rgba(47, 42, 74, 0.08);
+  transition: opacity 0.3s ease;   /* used for the fade effect */
+}
+
+/* JavaScript adds this class briefly to make the quote fade out */
+.quote-box.fade {
+  opacity: 0;
+}
+
+blockquote {
+  margin: 0 0 16px;
+  font-family: "Lora", serif;
+  font-style: italic;
+  font-size: 1.6rem;
+  line-height: 1.5;
+}
+
+figcaption {
+  font-weight: 500;
+  opacity: 0.75;
+}
+
+figcaption::before {
+  content: "— ";                   /* adds a dash before the author */
+}
+
+/* ---------- Button ---------- */
+button {
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text);
+  background: var(--accent);
+  border: none;
+  border-radius: 999px;            /* fully rounded */
+  padding: 12px 28px;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+button:hover {
+  background: var(--accent-dark);
+  transform: translateY(-2px);     /* tiny lift on hover */
+}
+
+/* Visible outline for keyboard users (accessibility) */
+button:focus-visible {
+  outline: 3px solid var(--text);
+  outline-offset: 3px;
+}
+
+/* ---------- Smaller screens (phones) ---------- */
+@media (max-width: 480px) {
+  h1 {
+    font-size: 2rem;
+  }
+  blockquote {
+    font-size: 1.3rem;
+  }
+  .quote-box {
+    padding: 28px 20px;
+  }
+}
